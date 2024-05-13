@@ -18,12 +18,19 @@ class MyWidget : public QWidget
 
 public:
     MyWidget(QWidget *parent = nullptr);
+    bool event(QEvent *ev);
     ~MyWidget();
 
 protected:
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event1);
     void mouseReleaseEvent(QMouseEvent *event2);
+
+signals:
+    void myPress();
+    void myMove();
+    void myRelease();
+    void myClick();
 
 private:
     Ui::MyWidget *ui;

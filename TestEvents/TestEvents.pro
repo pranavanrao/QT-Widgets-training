@@ -10,9 +10,11 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
+    mytimer.cpp \
     mywidget.cpp
 
 HEADERS += \
+    mytimer.h \
     mywidget.h
 
 FORMS += \

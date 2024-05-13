@@ -8,6 +8,17 @@ MyWidget::MyWidget(QWidget *parent)
     ui->setupUi(this);
 }
 
+bool MyWidget::event(QEvent *ev)
+{
+    qDebug() << Q_FUNC_INFO << Qt::endl;
+    if (ev->type() == QEvent::MouseButtonPress) {
+        return QWidget::event(ev);
+    } else {
+        return true;
+    }
+    // return true;
+}
+
 MyWidget::~MyWidget()
 {
     delete ui;
@@ -22,6 +33,8 @@ void MyWidget::mousePressEvent(QMouseEvent *event)
     b1->setGeometry(event->x(), event->y(), 100, 50);
     b1->show();
     qDebug() << event->pos() << " Type : " << event->type();
+
+    emit myPress();
 }
 
 void MyWidget::mouseMoveEvent(QMouseEvent *event1)

@@ -1,4 +1,5 @@
 #include "mywidget.h"
+#include "mytimer.h"
 
 #include <QApplication>
 #include <QPushButton>
@@ -17,6 +18,8 @@ int main(int argc, char *argv[])
     w1.setWindowTitle("Rohit Sharma");
     w1.setObjectName("Hitman");
     w1.show();
+
+    MyTimer t1;
 
     return a.exec();
 }
